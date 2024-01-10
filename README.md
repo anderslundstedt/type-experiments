@@ -98,7 +98,7 @@ some_EUR_money : t_money[EUR] ≔ …
 
 The type of our `fx` function now becomes:
 ```
-fx : Π(ccy_fr: t_ccy, ccy_to: t_ccy)(t_money[fr_ccy] → t_money[ccy_to])
+fx : Π(ccy_fr: t_ccy, ccy_to: t_ccy)(t_money[ccy_fr] → t_money[ccy_to])
 ```
 This is a dependently typed function: the types `t_money[ccy_fr]` and
 `t_money[ccy_to]` depend on the arguments `ccy_fr` and `ccy_to`, respectively.
