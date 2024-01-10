@@ -124,4 +124,5 @@ money_2 : t_money[EUR] ≔ fx(EUR, USD, money_2)
 TODO
 #### Coq 8.16 implementation
 
-TODO
+See the quite generously commented
+[coq-8.16/fx.v](coq-8.16/fx.v).
