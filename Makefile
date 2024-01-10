@@ -5,7 +5,11 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-.PHONY: readme clean clean-coq type-check type-check-coq
+.PHONY:\
+    readme \
+    update-flakes \
+    clean          clean-mac-os-junk      clean-coq \
+    type-check                       type-check-coq
 
 default:
 
@@ -16,9 +20,21 @@ readme:
 	cat readme-parts/*.* > README.md
 
 
+# UPDATE-FLAKE
+
+update-flake:
+	nix flake update
+
+
 # CLEAN
 
-clean: clean-coq
+clean: clean-direnv clean-mac-os-junk clean-coq
+
+clean-direnv:
+	rm -rvf .direnv
+
+clean-mac-os-junk:
+	rm -rvf **/.DS_Store
 
 clean-coq:
 	cd coq-8.16
