@@ -14,7 +14,7 @@ Abbreviations:
 
 When I last programmed professionally, many years ago now, one thing that
 bothered me more than once was that it seems like one cannot construct a
-type-safe function for currency conversion, if one does not have some amount of
+type-safe function for currency conversion—if one does not have some amount of
 [dependent types](https://en.wikipedia.org/wiki/Dependent_type)
 in one's type system. In some more detail: some amount of dependent types seems
 necessary for a sufficiently type-safe function converting a monetary amount in
