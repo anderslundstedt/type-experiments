@@ -50,26 +50,26 @@ Consider the following. Assume we have:
 
 Now say we want the equivalent of our `some_money_USD` in EUR:
 ```
-some_money_EUR : t_ccy ≔ fx(some_money_USD, EUR)
+some_money_EUR : t_money ≔ fx(some_money_USD, EUR)
 ```
 
 So far so good. The problem is that the following also type checks, where we
 have a typo with `USD` instead of `EUR` as last argument to `fx`.
 ```
-some_money_EUR : t_ccy ≔ fx(some_money_USD, USD)
+some_money_EUR : t_money ≔ fx(some_money_USD, USD)
 ```
 
 One solution, not requiring dependent types, for making that typo harder would
 be to require named arguments (supported by Python, for example). The above
 mistake would then be easier to catch:
 ```
-some_money_EUR : t_ccy ≔ fx(money_to_sell=some_money_USD, ccy_to=USD)
+some_money_EUR : t_money ≔ fx(money_to_sell=some_money_USD, ccy_to=USD)
 ```
 
 Notice however that it is only due to us including the currency name in each
 object's name that the typo is easier to catch with named arguments—consider:
 ```
-some_different_money : t_ccy ≔ fx(money_to_sell=some_money, ccy_to=USD)
+some_different_money : t_money ≔ fx(money_to_sell=some_money, ccy_to=USD)
 ```
 
 While choosing good names is important, it would be good if the type system
