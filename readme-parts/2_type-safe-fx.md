@@ -111,5 +111,5 @@ section are caught by type checking. For example, the following, where we mix up
 the order of the arguments to `fx`, does not type check:
 ```
 money_1 : t_money[USD] ≔ …
-money_2 : t_money[EUR] ≔ fx(EUR, USD, money_2)
+money_2 : t_money[EUR] ≔ fx(EUR, USD, money_1)
 ```
