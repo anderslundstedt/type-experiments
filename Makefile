@@ -7,6 +7,7 @@ MAKEFLAGS += --no-builtin-rules
 
 .PHONY:\
     readme \
+    preview-readme \
     update-flakes \
     clean          clean-mac-os-junk      clean-coq \
     type-check                       type-check-coq
@@ -18,6 +19,13 @@ default:
 
 readme:
 	cat readme-parts/*.* > README.md
+
+
+# PREVIEW-README
+
+user ?= anderslundstedt
+preview-readme:
+	grip --user='${user}' --pass '${pass}'
 
 
 # UPDATE-FLAKE
