@@ -1,0 +1,6 @@
+{
+    "typeCheckingMode": "strict",
+    "pythonVersion": "3.12",
+    "extraPaths": [ "python-3.12/" ],
+    "reportUnnecessaryTypeIgnoreComment": "error"
+}
