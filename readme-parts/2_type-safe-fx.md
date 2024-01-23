@@ -9,13 +9,14 @@ Abbreviations:
 When I last programmed professionally, many years ago now, one thing that
 bothered me more than once was that it seems like one cannot construct a
 type-safe function for currency conversion—if one does not have some amount of
-[dependent types](https://en.wikipedia.org/wiki/Dependent_type)
-in one's type system. In some more detail: some amount of dependent types seems
-necessary for a sufficiently type-safe function converting a monetary amount in
-one currency to a monetary amount in another currency. Hopefully the following
-subsections explains what I mean with ‘sufficiently type-safe’ in the preceding.
+[dependent types](https://en.wikipedia.org/wiki/Dependent_type) in one's type
+system. In some more detail: some amount of dependent types seems necessary for
+a sufficiently type-safe function converting a representation of a monetary
+amount in one currency to a representation of a monetary amount in another
+currency. Hopefully the following subsections explains what I mean with
+‘sufficiently type-safe’ in the preceding.
 
-### “Naive” solution (without dependent types)
+### “Naive” solutions (without dependent types)
 
 Consider the following. Assume we have:
 
@@ -53,9 +54,8 @@ have a typo with `USD` instead of `EUR` as last argument to `fx`.
 some_money_EUR : t_money ≔ fx(some_money_USD, USD)
 ```
 
-One solution, not requiring dependent types, for making that typo harder would
-be to require named arguments (supported by Python, for example). The above
-mistake would then be easier to catch:
+One solution, not requiring dependent types, for making that typo easier to
+catch would be to require named arguments (supported by Python, for example):
 ```
 some_money_EUR : t_money ≔ fx(money_to_sell=some_money_USD, ccy_to=USD)
 ```
